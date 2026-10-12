@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Campus Life Planner</title>
+  
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📚</text></svg>">
+
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header>
+    <h1> Campus Life Planner</h1>
+    <nav aria-label="Main navigation">
+      <button data-page="about" aria-controls="about">About</button>
+      <button data-page="dashboard" aria-controls="dashboard">Dashboard</button>
+      <button data-page="records" aria-controls="records">Records</button>
+      <button data-page="form" aria-controls="form">Add / Edit</button>
+      <button data-page="settings" aria-controls="settings">Settings</button>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- ABOUT -->
+    <section id="about">
+      <h2>About</h2>
+      <p>Plan your tasks and events, track how long they take, and search them with regex.</p>
+      <p>Built by: <strong>Hakizimana Baraka Joel</strong><br>
+      GitHub: <a href="https://github.com/jhakiziman2-cloud">jhakiziman2-cloud</a><br>
+      Email: <a href="#">j.hakiziman2@alustudent.com</a></p>
+    </section>
+
+    <!-- DASHBOARD -->
+    <section id="dashboard">
+      <h2>Dashboard</h2>
+      <div class="stats">
+        <div class="box"><span>Total tasks</span><strong id="statTotal">0</strong></div>
+        <div class="box"><span>Total time</span><strong id="statTime">0</strong></div>
+        <div class="box"><span>Top tag</span><strong id="statTag">-</strong></div>
+      </div>
+      <p id="capPolite" role="status" aria-live="polite"></p>
+      <p id="capAlert" role="alert" aria-live="assertive"></p>
+      <h3>Tasks due in the last 7 days</h3>
+      <div id="chart"></div>
+    </section>
+
+    <!-- RECORDS -->
+    <section id="records">
+      <h2>Records</h2>
+      <div class="toolbar">
+        <div>
+          <label for="searchBox">Search (regex)</label>
+          <input id="searchBox" type="text" placeholder="e.g. ^@tag:\w+ or \d{2}:\d{2}">
+        </div>
+        <div>
+          <label for="sortBox">Sort by</label>
+          <select id="sortBox">
+            <option value="date-asc">Due date (oldest)</option>
+            <option value="date-desc">Due date (newest)</option>
+            <option value="title-asc">Title A-Z</option>
+            <option value="title-desc">Title Z-A</option>
+            <option value="dur-asc">Duration low-high</option>
+            <option value="dur-desc">Duration high-low</option>
+          </select>
+        </div>
+        <label class="check"><input id="caseBox" type="checkbox" checked> Ignore case</label>
+      </div>
+      <p id="searchMsg" role="status" aria-live="polite"></p>
+      <div id="list"></div>
+    </section>
+
+    <!-- FORM -->
+    <section id="form">
+      <h2 id="formTitle">Add Task</h2>
+      <form id="taskForm" novalidate>
+        <label for="title">Title</label>
+        <input id="title" type="text" aria-describedby="titleErr" required>
+        <p class="error" id="titleErr" aria-live="polite"></p>
+
+        <label for="dueDate">Due date (YYYY-MM-DD)</label>
+        <input id="dueDate" type="text" placeholder="2026-10-20" aria-describedby="dateErr" required>
+        <p class="error" id="dateErr" aria-live="polite"></p>
+
+        <label for="duration">Duration (minutes)</label>
+        <input id="duration" type="text" placeholder="60" aria-describedby="durErr" required>
+        <p class="error" id="durErr" aria-live="polite"></p>
+
+        <label for="tag">Tag</label>
+        <input id="tag" type="text" placeholder="Study" aria-describedby="tagErr" required>
+        <p class="error" id="tagErr" aria-live="polite"></p>
+
+        <button type="submit" id="saveBtn">Save</button>
+        <button type="button" id="cancelBtn" class="grey">Cancel</button>
+      </form>
+      <p id="formMsg" role="status" aria-live="polite"></p>
+    </section>
+
+    <!-- SETTINGS -->
+    <section id="settings">
+      <h2>Settings</h2>
+      <label for="unitBox">Show duration in</label>
+      <select id="unitBox">
+        <option value="minutes">Minutes</option>
+        <option value="hours">Hours</option>
+      </select>
+
+      <label for="capBox">Time cap (minutes)</label>
+      <input id="capBox" type="text" value="600">
+
+      <button id="saveSettings">Save settings</button>
+
+      <h3>Data</h3>
+      <button id="exportBtn">Export JSON</button>
+      <button id="seedBtn" class="grey">Load sample data</button>
+      <label for="importBox">Import JSON file</label>
+      <input id="importBox" type="file" accept=".json">
+      <p id="settingsMsg" role="status" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <footer><p>Campus Life Planner &copy; 2026</p></footer>
+
+  <script src="scripts/storage.js"></script>
+  <script src="scripts/validators.js"></script>
+  <script src="scripts/search.js"></script>
+  <script src="scripts/app.js"></script>
+</body>
+</html>
+
