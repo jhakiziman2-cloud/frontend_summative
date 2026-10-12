@@ -28,4 +28,6 @@ Campus Life Planner aims to provide a clear and accessible experience for studen
 
 The purpose of this project is to help students manage their academic responsibilities in an organized and practical way. It also demonstrates how HTML, CSS, and JavaScript can be used to build an interactive web application with form validation, data management, search, statistics, and browser storage.
 
-Link to the video: https://drive.google.com/file/d/1l0ybmLtFMx8cpeVLX-n9Znr58b4E4mLC/view 
+Link to the video: https://drive.google.com/file/d/1l0ybmLtFMx8cpeVLX-n9Znr58b4E4mLC/view
+
+Link to github pages:https://jhakiziman2-cloud.github.io/frontend_summative/ 
