@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Campus Planner Tests</title></head>
+<body>
+<main><h1>Campus Life Planner tests</h1><p>Each test should display PASS.</p><ul id="out"></ul></main>
+<script src="scripts/validators.js"></script>
+<script src="scripts/search.js"></script>
+<script>
+function test(name, result) {
+  var li = document.createElement("li");
+  li.textContent = (result ? "PASS: " : "FAIL: ") + name;
+  li.style.color = result ? "green" : "red";
+  document.getElementById("out").appendChild(li);
+}
+var now = new Date().toISOString();
+function record(id, date) { return { id: id, title: "Study hard", dueDate: date || "2026-10-20", duration: 60, tag: "Study", createdAt: now, updatedAt: now }; }
+test("good title", checkTitle("Study hard") === "");
+test("leading space rejected", checkTitle(" Study") !== "");
+test("trailing space rejected", checkTitle("Study ") !== "");
+test("duplicate word rejected", checkTitle("the the exam") !== "");
+test("duration 60 accepted", checkDuration("60") === "");
+test("duration 01 rejected", checkDuration("01") !== "");
+test("negative duration rejected", checkDuration("-2") !== "");
+test("valid date accepted", checkDate("2026-10-20") === "");
+test("invalid month rejected", checkDate("2026-13-20") !== "");
+test("impossible date rejected", checkDate("2026-02-30") !== "");
+test("valid leap day accepted", checkDate("2028-02-29") === "");
+test("invalid leap day rejected", checkDate("2027-02-29") !== "");
+test("tag accepted", checkTag("Group-Work") === "");
+test("tag with number rejected", checkTag("Study1") !== "");
+test("invalid regex returns null", compileRegex("(", true) === null);
+test("highlight adds mark", highlight("abc", /b/g) === "a<mark>b</mark>c");
+test("highlight escapes HTML", highlight("<b>", null) === "&lt;b&gt;");
+test("valid record accepted", checkRecord(record("rec_001")));
+test("bad ID rejected", !checkRecord(record("<img onerror=x>")));
+test("duplicate IDs rejected", !checkRecords([record("rec_001"), record("rec_001")]));
+test("non-array import rejected", !checkRecords({}));
+test("invalid timestamp rejected", !checkRecord({ ...record("rec_002"), createdAt: "not-a-date" }));
+test("valid record list accepted", checkRecords([record("rec_001"), record("rec_002")]));
+</script>
+</body></html>
+
