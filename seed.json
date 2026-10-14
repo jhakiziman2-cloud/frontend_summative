@@ -8,6 +8,6 @@
   {"id":"rec_0007","title":"Leap day party","dueDate":"2028-02-29","duration":180,"tag":"Social","createdAt":"2026-10-01T08:00:00Z","updatedAt":"2026-10-01T08:00:00Z"},
   {"id":"rec_0008","title":"Read chapter 5 and 6","dueDate":"2026-10-08","duration":90.5,"tag":"Study","createdAt":"2026-10-01T08:00:00Z","updatedAt":"2026-10-01T08:00:00Z"},
   {"id":"rec_0009","title":"Club lunch at 12:00","dueDate":"2026-10-13","duration":50,"tag":"Club-Events","createdAt":"2026-10-01T08:00:00Z","updatedAt":"2026-10-01T08:00:00Z"},
-  {"id":"rec_0010","title":"Library <b>visit</b> & research","dueDate":"2026-10-07","duration":75,"tag":"Study","createdAt":"2026-10-01T08:00:00Z","updatedAt":"2026-10-01T08:00:00Z"}
+  {"id":"rec_0010","title":"Library visit & research","dueDate":"2026-10-07","duration":75,"tag":"Study","createdAt":"2026-10-01T08:00:00Z","updatedAt":"2026-10-01T08:00:00Z"}
 ]
 
