@@ -373,11 +373,20 @@ $("importBox").addEventListener("change", function () {
 });
 
 $("seedBtn").addEventListener("click", function () {
-  fetch("seed.json")
-    .then(function (res) { return res.json(); })
-    .then(function (data) { loadImported(data); })
-    .catch(function () {
-      $("settingsMsg").textContent = "Could not load seed.json (use a web server or GitHub Pages).";
+  fetch("./seed.json")
+    .then(function (res) {
+      if (!res.ok) {
+        throw new Error("Could not find seed.json");
+      }
+      return res.json();
+    })
+    .then(function (data) {
+      loadImported(data);
+    })
+    .catch(function (error) {
+      console.error(error);
+      $("settingsMsg").textContent =
+        "Could not load seed.json. Check the file path and try again.";
     });
 });
 
