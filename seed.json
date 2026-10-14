@@ -1,0 +1,13 @@
+[
+  {"id":"rec_0001","title":"Study for Chemistry exam","dueDate":"2026-10-14","duration":120,"tag":"Study","createdAt":"2026-10-01T08:00:00Z","updatedAt":"2026-10-01T08:00:00Z"},
+  {"id":"rec_0002","title":"Team meeting at 14:30","dueDate":"2026-10-12","duration":45,"tag":"Group-Work","createdAt":"2026-10-01T08:00:00Z","updatedAt":"2026-10-01T08:00:00Z"},
+  {"id":"rec_0003","title":"Submit essay draft","dueDate":"2026-10-09","duration":240,"tag":"Writing","createdAt":"2026-10-01T08:00:00Z","updatedAt":"2026-10-01T08:00:00Z"},
+  {"id":"rec_0004","title":"Gym session","dueDate":"2026-10-10","duration":60,"tag":"Health","createdAt":"2026-10-01T08:00:00Z","updatedAt":"2026-10-01T08:00:00Z"},
+  {"id":"rec_0005","title":"Quick call","dueDate":"2026-10-11","duration":0,"tag":"Social","createdAt":"2026-10-01T08:00:00Z","updatedAt":"2026-10-01T08:00:00Z"},
+  {"id":"rec_0006","title":"Final year project work","dueDate":"2026-12-31","duration":1440,"tag":"Study","createdAt":"2026-10-01T08:00:00Z","updatedAt":"2026-10-01T08:00:00Z"},
+  {"id":"rec_0007","title":"Leap day party","dueDate":"2028-02-29","duration":180,"tag":"Social","createdAt":"2026-10-01T08:00:00Z","updatedAt":"2026-10-01T08:00:00Z"},
+  {"id":"rec_0008","title":"Read chapter 5 and 6","dueDate":"2026-10-08","duration":90.5,"tag":"Study","createdAt":"2026-10-01T08:00:00Z","updatedAt":"2026-10-01T08:00:00Z"},
+  {"id":"rec_0009","title":"Club lunch at 12:00","dueDate":"2026-10-13","duration":50,"tag":"Club-Events","createdAt":"2026-10-01T08:00:00Z","updatedAt":"2026-10-01T08:00:00Z"},
+  {"id":"rec_0010","title":"Library <b>visit</b> & research","dueDate":"2026-10-07","duration":75,"tag":"Study","createdAt":"2026-10-01T08:00:00Z","updatedAt":"2026-10-01T08:00:00Z"}
+]
+
